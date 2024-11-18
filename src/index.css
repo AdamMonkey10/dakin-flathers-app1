@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    @apply antialiased text-gray-900;
+  }
+
+  /* Custom checkbox styles */
+  input[type="checkbox"] {
+    @apply h-6 w-6 cursor-pointer;
+    accent-color: #2563eb; /* blue-600 */
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-md font-medium transition-colors
+           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-outline {
+    @apply border border-gray-300 text-gray-700 hover:bg-gray-50
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+}
+
+/* Tablet Optimizations */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .tablet-grid {
+    @apply grid-cols-2 gap-4;
+  }
+
+  .tablet-card {
+    @apply p-4;
+  }
+
+  .tablet-text {
+    @apply text-sm;
+  }
+}
